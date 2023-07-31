@@ -1,0 +1,44 @@
+﻿@model mvcpruebaTecnica.Models.UsuarioLogueo
+@{
+    ViewData["Title"] = "Pantalla Logueo";
+}
+<h4>Logueo Usuarios</h4>
+<hr />
+ 
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Logueoform"  method="get">
+            <div class="form-group">
+                <label asp-for="usuario" class="control-label"></label>
+                <input asp-for="usuario" class="form-control"  />
+                <span asp-validation-for="usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control"  />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+
+ 
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-block" />
+                </div>
+                
+            </div>
+ 
+        </form>
+    </div>
+</div>
+ 
+
+@section scripts
+{
+     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function() {
+            //alert("Test");
+        });
+    </script>
+}

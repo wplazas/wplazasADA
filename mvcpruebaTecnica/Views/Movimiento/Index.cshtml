@@ -1,0 +1,55 @@
+﻿@model IEnumerable<mvcpruebaTecnica.Models.Movimiento>
+@{
+    ViewBag.Title = "Vista Administrador Movimientos por Comprador";
+}
+<h3>Vista Administrador Movimientos por Comprador</h3>
+
+        <table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidadcompra)
+        </th>
+                <th>
+            @Html.DisplayNameFor(model => model.disponible)
+        </th>
+
+        <th></th>
+    </tr>
+    @foreach (var lista in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => lista.usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => lista.producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => lista.cantidadcompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => lista.disponible)
+            </td>
+
+        </tr>
+    }
+
+
+</table>
+       
+<br/>
+
+     <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button type="button" class="btn btn-primary btn-block" onclick="location.href='@Url.Action("Index", "Home")'">Atras</button>
+
+                </div>
+                
+     </div>
+
